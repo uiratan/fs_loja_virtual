@@ -3,6 +3,7 @@ package br.com.uira.lojavirtual.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.ConstraintMode;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -23,14 +24,23 @@ public class NotaFiscalCompra {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(nullable = false)
 	private String numero;
+	
+	@Column(nullable = false)
 	private String serie;
+	
 	private String descricao;
 	
+	@Column(nullable = false)
 	private BigDecimal valorTotal;
+	
 	private BigDecimal valorDesconto;
+	
+	@Column(nullable = false)
 	private BigDecimal valorICMS;
 	
+	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date dataCompra;
 	

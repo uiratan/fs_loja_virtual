@@ -1,5 +1,6 @@
 package br.com.uira.lojavirtual.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.ConstraintMode;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -18,6 +19,7 @@ public class ItemVenda {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(nullable = false)
 	private Double quantidade;
 
 	@ManyToOne

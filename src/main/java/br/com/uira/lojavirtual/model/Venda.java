@@ -3,6 +3,7 @@ package br.com.uira.lojavirtual.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.ConstraintMode;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -36,6 +37,9 @@ public class Venda {
 	@JoinColumn(nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "endereco_cobranca_fk"))
 	private Endereco enderecoCobranca;
 	
+	@Column(nullable = false)
+	private BigDecimal valorTotal;
+	
 	private BigDecimal valorDesconto;
 		
 	@ManyToOne
@@ -47,16 +51,20 @@ public class Venda {
 	private NotaFiscalVenda notaFiscalVenda;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "cupom_desconto_fk"))
+	@JoinColumn(foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "cupom_desconto_fk"))
 	private CupomDesconto cupomDesconto;
 	
+	@Column(nullable = false)
 	private BigDecimal valorFrete;
 	
+	@Column(nullable = false)
 	private Integer diasParaEntrega;
 	
+	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date dataVenda;
 	
+	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date dataEntrega;
 }

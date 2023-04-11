@@ -13,9 +13,6 @@ import lombok.Data;
 @Data
 public class Acesso implements GrantedAuthority {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id

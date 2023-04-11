@@ -1,5 +1,6 @@
 package br.com.uira.lojavirtual.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,5 +16,6 @@ public class FormaPagamento {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(nullable = false)
 	private String descricao;
 }

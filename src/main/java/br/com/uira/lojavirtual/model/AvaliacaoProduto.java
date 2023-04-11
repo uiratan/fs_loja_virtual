@@ -18,16 +18,20 @@ public class AvaliacaoProduto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@Column(nullable = false)
+	private Integer nota;
 	
-	@Column(columnDefinition = "text")
+	@Column(nullable = false)
 	private String descricao;
+
+	@ManyToOne(targetEntity = Pessoa.class)
+	@JoinColumn(nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fk"))
+	private Pessoa pessoa;
 	
 	@ManyToOne
 	@JoinColumn(nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "produto_fk"))
 	private Produto produto;
-	
-	@ManyToOne(targetEntity = Pessoa.class)
-	@JoinColumn(nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fk"))
-	private Pessoa pessoa;
+
 	
 }

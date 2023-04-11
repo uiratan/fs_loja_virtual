@@ -3,6 +3,7 @@ package br.com.uira.lojavirtual.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,12 +20,14 @@ public class CupomDesconto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(nullable = false)
 	private String codigo;
 	
 	private BigDecimal valorMonetario;
 	
 	private BigDecimal valorPorcentagem;
-	
+		
+	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date dataValidade;
 

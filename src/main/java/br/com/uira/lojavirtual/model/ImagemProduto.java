@@ -21,12 +21,10 @@ public class ImagemProduto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String descricao;
-	
-	@Column(columnDefinition = "text")
+	@Column(nullable = false, columnDefinition = "text")
 	private String imagemOriginal;
 
-	@Column(columnDefinition = "text")
+	@Column(nullable = false, columnDefinition = "text")
 	private String imagemMiniatura;
 	
 	@ManyToOne
