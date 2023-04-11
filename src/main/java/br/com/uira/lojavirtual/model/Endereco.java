@@ -1,7 +1,10 @@
 package br.com.uira.lojavirtual.model;
 
+import br.com.uira.lojavirtual.enums.TipoEndereco;
 import jakarta.persistence.ConstraintMode;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,5 +32,8 @@ public class Endereco {
 	@ManyToOne(targetEntity = Pessoa.class)
 	@JoinColumn(name = "pessoa_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fk"))
 	private Pessoa pessoa;
+	
+	@Enumerated(EnumType.STRING)
+	private TipoEndereco tipoEndereco;
 
 }
