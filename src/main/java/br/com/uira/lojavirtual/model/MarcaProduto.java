@@ -15,7 +15,6 @@ import lombok.Data;
 public class MarcaProduto {
 
 	@Id
-//	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_marca_produto")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
